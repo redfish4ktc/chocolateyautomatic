@@ -111,7 +111,7 @@
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>Textual</VariableType>
             <Regex />
-            <Url>http://mirrors.supportex.net/apache/tomcat/tomcat-8/v8.0.8/bin</Url>
+            <Url>http://mirrors.supportex.net/apache/tomcat/tomcat-8/v{version}/bin/apache-tomcat-{version}-windows-x64.zip</Url>
             <TextualContent>""</TextualContent>
             <Name>url64</Name>
           </UrlVariable>
@@ -130,7 +130,7 @@
     <FileHippoId />
     <LastUpdated>2014-06-01T03:40:37.1151616+02:00</LastUpdated>
     <TargetPath>C:\Chocolatey\_work\</TargetPath>
-    <FixedDownloadUrl>http://mirrors.supportex.net/apache/tomcat/tomcat-8/v8.0.8/bin/apache-tomcat-{version}-windows-x86.zip</FixedDownloadUrl>
+    <FixedDownloadUrl>http://mirrors.supportex.net/apache/tomcat/tomcat-8/v{version}/bin/apache-tomcat-{version}-windows-x86.zip</FixedDownloadUrl>
     <Name>tomcatzip</Name>
   </ApplicationJob>
 </Jobs>
