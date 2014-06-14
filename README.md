@@ -1,3 +1,4 @@
 chocolateyautomatic
 ===================
+ * hadoop
  * tomcatzip
