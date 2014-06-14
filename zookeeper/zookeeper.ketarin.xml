@@ -1,11 +1,11 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
 <Jobs>
-  <ApplicationJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Guid="59b9634d-cb4c-46e2-86bb-730c316d19db">
+  <ApplicationJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Guid="1344d765-d601-4339-8249-160f26d2ac71">
     <WebsiteUrl />
     <UserAgent />
     <UserNotes />
-    <LastFileSize>138943699</LastFileSize>
-    <LastFileDate>2014-06-14T21:13:23.4866167</LastFileDate>
+    <LastFileSize>17699306</LastFileSize>
+    <LastFileDate>2014-06-14T22:20:31.9801066</LastFileDate>
     <IgnoreFileInformation>false</IgnoreFileInformation>
     <DownloadBeta>Default</DownloadBeta>
     <DownloadDate xsi:nil="true" />
@@ -25,26 +25,26 @@
           <UrlVariable>
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>RegularExpression</VariableType>
-            <Regex>Release\+([\d.]+)\+available</Regex>
-            <Url>http://hadoop.apache.org/releases.html</Url>
+            <Regex>release ([\d.]+) available</Regex>
+            <Url>http://zookeeper.apache.org/releases.html</Url>
             <Name>version</Name>
           </UrlVariable>
         </value>
       </item>
     </Variables>
-    <ExecuteCommand>chocopkgup /p {appname} /v {version} /u "{preupdate-url}" /u64 "{url64}" /pp "{file}"</ExecuteCommand>
+    <ExecuteCommand />
     <ExecutePreCommand />
     <ExecuteCommandType>Batch</ExecuteCommandType>
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
     <Category />
     <SourceType>FixedUrl</SourceType>
-    <PreviousLocation>C:\Chocolatey\_work\hadoop-2.4.0.tar.gz</PreviousLocation>
+    <PreviousLocation>C:\Chocolatey\_work\zookeeper-3.4.6.tar.gz</PreviousLocation>
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2014-06-14T21:13:23.4866167</LastUpdated>
+    <LastUpdated>2014-06-14T22:20:31.9801066</LastUpdated>
     <TargetPath>C:\Chocolatey\_work\</TargetPath>
-    <FixedDownloadUrl>http://ftp.nluug.nl/internet/apache/hadoop/common/hadoop-{version}/hadoop-{version}.tar.gz</FixedDownloadUrl>
-    <Name>hadoop</Name>
+    <FixedDownloadUrl>http://apache.mirror.1000mbps.com/zookeeper/zookeeper-{version}/zookeeper-{version}.tar.gz</FixedDownloadUrl>
+    <Name>zookeeper</Name>
   </ApplicationJob>
 </Jobs>
