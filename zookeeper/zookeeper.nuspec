@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>hadoop</id>
+    <id>zookeeper</id>
     <version>{{PackageVersion}}</version>
-    <title>Hadoop</title>
+    <title>ZooKeeper</title>
     <authors>Apache</authors>
     <owners>Utrecht</owners>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
-    <projectUrl>http://hadoop.apache.org/</projectUrl>
-    <iconUrl>http://hadoop.apache.org/images/hadoop-logo.jpg</iconUrl>
+    <projectUrl>http://zookeeper.apache.org/</projectUrl>
+    <iconUrl>http://zookeeper.apache.org/images/zookeeper_small.gif</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Windows 32 and 64 bit. Extraction path: "c:/Hadoop".
+    <description>Windows 32 and 64 bit. Extraction path: "c:/ZooKeeper".
 	</description>
-    <summary>hadoop</summary>
-    <releaseNotes>http://hadoop.apache.org/releases.html</releaseNotes>
-    <tags>hadoop hdfs dfs namenode datanode apache yarn mapreduce</tags>
+    <summary>zookeeper</summary>
+    <releaseNotes>http://zookeeper.apache.org/releases.html#releasenotes</releaseNotes>
+    <tags>hadoop apache zookeeper</tags>
     <dependencies>
       <dependency id="jdk8" version="1.8.0.0507" />
 	  <dependency id="cyg-get" version="1.1.1" />
