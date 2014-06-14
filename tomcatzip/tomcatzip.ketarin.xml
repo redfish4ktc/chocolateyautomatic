@@ -1,76 +1,8 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
 <Jobs>
-  <ApplicationJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Guid="5e310855-5298-4898-8604-86112cd939a0">
-    <SourceTemplate><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<Jobs>
-  <ApplicationJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Guid="0fb30714-8ed0-4611-8f1b-cb8fec9dae91">
+  <ApplicationJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Guid="01edc8bb-86a0-4811-adc3-c6fc1f47e7f1">
     <WebsiteUrl />
-    <UserAgent>Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19</UserAgent>
-    <UserNotes />
-    <LastFileSize>384846</LastFileSize>
-    <LastFileDate>2012-05-23T02:09:37.7748325</LastFileDate>
-    <IgnoreFileInformation>false</IgnoreFileInformation>
-    <DownloadBeta>Default</DownloadBeta>
-    <DownloadDate xsi:nil="true" />
-    <CheckForUpdatesOnly>false</CheckForUpdatesOnly>
-    <VariableChangeIndicator />
-    <CanBeShared>true</CanBeShared>
-    <ShareApplication>false</ShareApplication>
-    <ExclusiveDownload>false</ExclusiveDownload>
-    <HttpReferer />
-    <SetupInstructions />
-    <Variables>
-      <item>
-        <key>
-          <string>version</string>
-        </key>
-        <value>
-          <UrlVariable>
-            <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>StartEnd</VariableType>
-            <Regex />
-            <Url><placeholder name="Url with version information" value="http://tomcat.apache.org/download-80.cgi" /></Url>
-            <StartText>&lt;TABLE cellspacing ="1" cellpadding ="6" border = "0"&gt;
-  &lt;TR&gt;
-    &lt;TH class="Title" align="center" width=90&gt;7-Zip </StartText>
-            <EndText>&lt;BR&gt;</EndText>
-            <TextualContent />
-            <Name>version</Name>
-          </UrlVariable>
-        </value>
-      </item>
-      <item>
-        <key>
-          <string>url64</string>
-        </key>
-        <value>
-          <UrlVariable>
-            <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>Textual</VariableType>
-            <Regex />
-            <TextualContent>""</TextualContent>
-            <Name>url64</Name>
-          </UrlVariable>
-        </value>
-      </item>
-    </Variables>
-    <ExecuteCommand />
-    <ExecutePreCommand />
-    <ExecuteCommandType>Batch</ExecuteCommandType>
-    <ExecutePreCommandType>Batch</ExecutePreCommandType>
-    <Category />
-    <SourceType>FixedUrl</SourceType>
-    <DeletePreviousFile>true</DeletePreviousFile>
-    <Enabled>true</Enabled>
-    <FileHippoId />
-    <LastUpdated>2012-05-23T02:09:37.7748325</LastUpdated>
-    <TargetPath>C:\Chocolatey\_work\</TargetPath>
-    <FixedDownloadUrl><placeholder name="Download Url - Optional" value="apache.mirror.triple-it.nl/tomcat/tomcat-8/v{version}/bin/apache-tomcat-{version}-windows-x86.zip" /></FixedDownloadUrl>
-    <Name><placeholder name="Name" value="tomcatzip" /></Name>
-  </ApplicationJob>
-</Jobs>]]></SourceTemplate>
-    <WebsiteUrl />
-    <UserAgent>Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19</UserAgent>
+    <UserAgent />
     <UserNotes />
     <LastFileSize>10283000</LastFileSize>
     <LastFileDate>2014-05-16T21:45:16+02:00</LastFileDate>
@@ -92,12 +24,9 @@
         <value>
           <UrlVariable>
             <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>StartEnd</VariableType>
-            <Regex />
-            <Url>http://apache.mirror.triple-it.nl/tomcat/tomcat-8/</Url>
-            <StartText>ns/folder.gif" alt="[DIR]"&gt; &lt;a href="v</StartText>
-            <EndText>/"&gt;v</EndText>
-            <TextualContent />
+            <VariableType>RegularExpression</VariableType>
+            <Regex>Version ([\d\.]+),</Regex>
+            <Url>http://tomcat.apache.org/tomcat-8.0-doc/index.html</Url>
             <Name>version</Name>
           </UrlVariable>
         </value>
@@ -109,17 +38,16 @@
         <value>
           <UrlVariable>
             <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>Textual</VariableType>
-            <Regex />
-            <Url>http://mirrors.supportex.net/apache/tomcat/tomcat-8/v{version}/bin/apache-tomcat-{version}-windows-x64.zip</Url>
-            <TextualContent>""</TextualContent>
+            <VariableType>RegularExpression</VariableType>
+            <Regex>&lt;a href="(http://[\w./]+/tomcat-8/v[\d.]+/bin/apache-tomcat-[\d.]+-windows-x64.zip)" rel="nofollow"&gt;64-bit Windows zip&lt;/a&gt; </Regex>
+            <Url>http://tomcat.apache.org/download-80.cgi</Url>
             <Name>url64</Name>
           </UrlVariable>
         </value>
       </item>
     </Variables>
     <ExecuteCommand />
-    <ExecutePreCommand />
+    <ExecutePreCommand>{version} /u {preupdate-url} /u64 {url64}</ExecutePreCommand>
     <ExecuteCommandType>Batch</ExecuteCommandType>
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
     <Category />
@@ -128,9 +56,9 @@
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2014-06-01T03:40:37.1151616+02:00</LastUpdated>
+    <LastUpdated>2014-06-15T01:07:11.7702203+02:00</LastUpdated>
     <TargetPath>C:\Chocolatey\_work\</TargetPath>
-    <FixedDownloadUrl>http://mirrors.supportex.net/apache/tomcat/tomcat-8/v{version}/bin/apache-tomcat-{version}-windows-x86.zip</FixedDownloadUrl>
+    <FixedDownloadUrl>http://apache.hippo.nl/tomcat/tomcat-8/v{version}/bin/apache-tomcat-{version}-windows-x86.zip</FixedDownloadUrl>
     <Name>tomcatzip</Name>
   </ApplicationJob>
 </Jobs>

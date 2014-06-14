@@ -3,7 +3,7 @@
   <metadata>
     <id>tomcatzip</id>
     <version>{{PackageVersion}}</version>
-    <title>Apache Tomcat</title>
+    <title>Apache Tomcat {{PackageVersion}}</title>
     <authors>Apache</authors>
     <owners>Utrecht Almere</owners>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
@@ -14,7 +14,7 @@
 	</description>
     <summary>tomcatzip</summary>
     <releaseNotes>http://tomcat.apache.org/</releaseNotes>
-    <tags>tomcat apache jdk8 as</tags>
+    <tags>tomcat apache jdk8 application server</tags>
     <dependencies>
       <dependency id="jdk8" version="1.8.0.0506" />
     </dependencies>
