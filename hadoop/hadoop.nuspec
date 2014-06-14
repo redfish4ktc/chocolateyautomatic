@@ -3,7 +3,7 @@
   <metadata>
     <id>hadoop</id>
     <version>{{PackageVersion}}</version>
-    <title>Hadoop</title>
+    <title>Hadoop {{PackageVersion}}</title>
     <authors>Apache</authors>
     <owners>Utrecht</owners>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>

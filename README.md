@@ -2,3 +2,4 @@ chocolateyautomatic
 ===================
  * hadoop
  * tomcatzip
+ * zookeeper
