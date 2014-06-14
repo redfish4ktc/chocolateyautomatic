@@ -3,7 +3,7 @@
   <metadata>
     <id>tomcatzip</id>
     <version>{{PackageVersion}}</version>
-    <title>Apache Tomcat {{PackageVersion}}</title>
+    <title>Tomcat</title>
     <authors>Apache</authors>
     <owners>Utrecht Almere</owners>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
