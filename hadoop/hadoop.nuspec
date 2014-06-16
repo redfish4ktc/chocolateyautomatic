@@ -16,8 +16,8 @@
     <releaseNotes>http://hadoop.apache.org/releases.html</releaseNotes>
     <tags>hadoop hdfs dfs namenode datanode apache yarn mapreduce</tags>
     <dependencies>
-      <dependency id="jdk8" version="1.8.0.0507" />
-	  <dependency id="cyg-get" version="1.1.1" />
+      <dependency id="jdk8" />
+	  <dependency id="cyg-get" />
     </dependencies>
   </metadata>
 </package>
