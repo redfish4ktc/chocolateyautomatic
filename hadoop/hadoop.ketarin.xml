@@ -4,8 +4,8 @@
     <WebsiteUrl />
     <UserAgent />
     <UserNotes />
-    <LastFileSize>138943699</LastFileSize>
-    <LastFileDate>2014-06-14T21:13:23.4866167</LastFileDate>
+    <LastFileSize>138656756</LastFileSize>
+    <LastFileDate>2014-07-04T20:04:39.213863</LastFileDate>
     <IgnoreFileInformation>false</IgnoreFileInformation>
     <DownloadBeta>Default</DownloadBeta>
     <DownloadDate xsi:nil="true" />
@@ -38,11 +38,11 @@
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
     <Category />
     <SourceType>FixedUrl</SourceType>
-    <PreviousLocation>C:\Chocolatey\_work\hadoop-2.4.0.tar.gz</PreviousLocation>
+    <PreviousLocation>C:\Chocolatey\_work\hadoop-2.4.1.tar.gz</PreviousLocation>
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2014-06-14T21:13:23.4866167</LastUpdated>
+    <LastUpdated>2014-07-04T20:04:39.213863</LastUpdated>
     <TargetPath>C:\Chocolatey\_work\</TargetPath>
     <FixedDownloadUrl>http://ftp.nluug.nl/internet/apache/hadoop/common/hadoop-{version}/hadoop-{version}.tar.gz</FixedDownloadUrl>
     <Name>hadoop</Name>

@@ -5,7 +5,7 @@
     <UserAgent />
     <UserNotes />
     <LastFileSize>17699306</LastFileSize>
-    <LastFileDate>2014-06-14T22:20:31.9801066</LastFileDate>
+    <LastFileDate>2014-06-16T23:26:25.7904974</LastFileDate>
     <IgnoreFileInformation>false</IgnoreFileInformation>
     <DownloadBeta>Default</DownloadBeta>
     <DownloadDate xsi:nil="true" />
@@ -32,7 +32,7 @@
         </value>
       </item>
     </Variables>
-    <ExecuteCommand />
+    <ExecuteCommand>chocopkgup /p {appname} /v {version} /u "{preupdate-url}" /u64 "{url64}" /pp "{file}"</ExecuteCommand>
     <ExecutePreCommand />
     <ExecuteCommandType>Batch</ExecuteCommandType>
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
@@ -42,7 +42,7 @@
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2014-06-14T22:20:31.9801066</LastUpdated>
+    <LastUpdated>2014-06-16T23:26:25.7904974</LastUpdated>
     <TargetPath>C:\Chocolatey\_work\</TargetPath>
     <FixedDownloadUrl>http://apache.mirror.1000mbps.com/zookeeper/zookeeper-{version}/zookeeper-{version}.tar.gz</FixedDownloadUrl>
     <Name>zookeeper</Name>
