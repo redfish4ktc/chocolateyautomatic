@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>eadt</id>
+    <version>{{PackageVersion}}</version>
+    <title>Eclipse ADT</title>
+    <authors>Google</authors>
+    <owners>Utrecht</owners>
+    <licenseUrl>http://developer.android.com/license.html</licenseUrl>
+    <projectUrl>http://developer.android.com/sdk/index.html</projectUrl>
+    <iconUrl>http://tomcat.apache.org/images/tomcat.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Windows 32 and 64 bit. Extraction path: "c:/Program Files/Google". Open a command prompt and execute "eadt" to run Eclipse ADT.	 
+	</description>
+    <summary>eadt</summary>
+    <releaseNotes>http://tools.android.com/release</releaseNotes>
+    <tags>eclipse adt android jdk8</tags>
+    <dependencies>
+      <dependency id="jdk8" />
+    </dependencies>
+  </metadata>
+</package>
