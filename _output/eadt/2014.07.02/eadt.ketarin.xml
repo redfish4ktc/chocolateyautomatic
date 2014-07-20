@@ -155,7 +155,7 @@
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2014-07-20T20:03:01.5554665+02:00</LastUpdated>
+    <LastUpdated>2014-07-20T19:38:47.3304506+02:00</LastUpdated>
     <TargetPath>C:\Chocolatey\_work\</TargetPath>
     <FixedDownloadUrl>{url}</FixedDownloadUrl>
     <Name>eadt</Name>
