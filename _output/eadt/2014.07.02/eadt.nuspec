@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>eadt</id>
-    <version>2014.07.0201</version>
+    <version>2014.07.0204</version>
     <title>Eclipse ADT</title>
     <authors>Google</authors>
     <owners>Utrecht</owners>
@@ -10,7 +10,7 @@
     <projectUrl>http://developer.android.com/sdk/index.html</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/030/chocolateyautomatic/master/eadt/eadtLogo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Windows 32 and 64 bit. Extraction path: "c:/Program Files/Google".	 
+    <description>Windows 32 and 64 bit. Extraction path: "c:/Google".	 
 	</description>
     <summary>eadt</summary>
     <releaseNotes>http://tools.android.com/release</releaseNotes>
