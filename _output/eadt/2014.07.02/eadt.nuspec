@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>eadt</id>
-    <version>2014.07.0205</version>
+    <version>2014.07.0206</version>
     <title>Eclipse ADT</title>
     <authors>Google</authors>
     <owners>Utrecht</owners>
