@@ -10,4 +10,4 @@ Install-ChocolateyDesktopLink $sdkManager
 Install-ChocolateyPinnedTaskBarItem $sdkManager
 Install-ChocolateyDesktopLink $eclipse
 Install-ChocolateyPinnedTaskBarItem $eclipse
-Write-ChocolateySuccess '$packageName'
+Write-ChocolateySuccess "$packageName"
