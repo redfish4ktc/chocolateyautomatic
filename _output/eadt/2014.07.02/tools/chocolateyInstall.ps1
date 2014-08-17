@@ -1,5 +1,11 @@
 ﻿$packageName = 'Eclipse ADT'
 $extractionPath = "C:/Google"
+
+  if (!$extractionPath) {
+    Write-Host "$extractionPath directory does not exist and will be created"
+    New-Item -ItemType Directory -Path $extractionPath
+  }
+
 $sdkManager = (gci "${extractionPath}/*/SDK Manager.exe").FullName | sort -Descending | Select -first 1
 $eclipse = (gci "${extractionPath}/*/eclipse/eclipse.exe").FullName
 
