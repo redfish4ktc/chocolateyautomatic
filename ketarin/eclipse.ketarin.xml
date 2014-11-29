@@ -4,8 +4,8 @@
     <WebsiteUrl />
     <UserAgent />
     <UserNotes />
-    <LastFileSize>271320318</LastFileSize>
-    <LastFileDate>2014-07-08T01:34:59.7807183</LastFileDate>
+    <LastFileSize>266229811</LastFileSize>
+    <LastFileDate>2014-09-25T22:00:00+02:00</LastFileDate>
     <IgnoreFileInformation>false</IgnoreFileInformation>
     <DownloadBeta>Default</DownloadBeta>
     <DownloadDate xsi:nil="true" />
@@ -26,7 +26,7 @@
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>Textual</VariableType>
             <Regex />
-            <TextualContent>{url}/{package64}</TextualContent>
+            <TextualContent>{baseUrl}/{package}-x86_64{extension}</TextualContent>
             <Name>url64</Name>
           </UrlVariable>
         </value>
@@ -75,57 +75,15 @@
       </item>
       <item>
         <key>
-          <string>versionName</string>
-        </key>
-        <value>
-          <UrlVariable>
-            <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>RegularExpression</VariableType>
-            <Regex>release/(\w+)/R/eclipse</Regex>
-            <Url>https://www.eclipse.org/downloads/</Url>
-            <Name>versionName</Name>
-          </UrlVariable>
-        </value>
-      </item>
-      <item>
-        <key>
           <string>package</string>
         </key>
         <value>
           <UrlVariable>
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>RegularExpression</VariableType>
-            <Regex>eclipse-jee-\w+-R-win32</Regex>
+            <Regex>\w+\/\w+\/eclipse-jee-\w+-\w+-win32</Regex>
             <Url>http://eclipse.org/downloads/</Url>
             <Name>package</Name>
-          </UrlVariable>
-        </value>
-      </item>
-      <item>
-        <key>
-          <string>package32</string>
-        </key>
-        <value>
-          <UrlVariable>
-            <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>Textual</VariableType>
-            <Regex />
-            <TextualContent>{package}{extension}</TextualContent>
-            <Name>package32</Name>
-          </UrlVariable>
-        </value>
-      </item>
-      <item>
-        <key>
-          <string>package64</string>
-        </key>
-        <value>
-          <UrlVariable>
-            <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>Textual</VariableType>
-            <Regex />
-            <TextualContent>{package}-x86_64{extension}</TextualContent>
-            <Name>package64</Name>
           </UrlVariable>
         </value>
       </item>
@@ -138,7 +96,7 @@
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>Textual</VariableType>
             <Regex />
-            <TextualContent>{baseUrl}/{versionName}/R</TextualContent>
+            <TextualContent>{baseUrl}/{package}{extension}</TextualContent>
             <Name>url</Name>
           </UrlVariable>
         </value>
@@ -150,13 +108,13 @@
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
     <Category />
     <SourceType>FixedUrl</SourceType>
-    <PreviousLocation>C:\Chocolatey\_work\eclipse-jee-luna-R-win32.zip</PreviousLocation>
+    <PreviousLocation>C:\ProgramData\Chocolatey\_work\eclipse-jee-luna-SR1-win32.zip</PreviousLocation>
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2014-07-08T01:34:59.7807183</LastUpdated>
-    <TargetPath>C:\Chocolatey\_work\</TargetPath>
-    <FixedDownloadUrl>{url}/{package32}</FixedDownloadUrl>
+    <LastUpdated>2014-11-28T23:54:54.2470529+01:00</LastUpdated>
+    <TargetPath>C:\ProgramData\Chocolatey\_work\</TargetPath>
+    <FixedDownloadUrl>{url}</FixedDownloadUrl>
     <Name>eclipse</Name>
   </ApplicationJob>
 </Jobs>
