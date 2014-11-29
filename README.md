@@ -1,5 +1,3 @@
 chocolateyautomatic
 ===================
- * hadoop
- * tomcatzip
- * zookeeper
+ * eclipse
