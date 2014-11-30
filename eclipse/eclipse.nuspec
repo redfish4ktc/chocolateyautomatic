@@ -8,7 +8,7 @@
     <owners>Utrecht Almere</owners>
     <licenseUrl>http://www.eclipse.org/org/documents/epl-v10.php</licenseUrl>
     <projectUrl>http://www.eclipse.org/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/030/chocolateyautomatic/master/icons/javaee.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/030/chocolateyautomatic/master/icons/eclipse.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Eclipse IDE for Java EE Developers. Windows 32 and 64 bit. Extraction path: "C:\Program Files\Eclipse Foundation".</description>
     <summary>eclipse</summary>
