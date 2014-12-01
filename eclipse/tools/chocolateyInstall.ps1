@@ -13,7 +13,7 @@ if($packageParameters) {
 	$PARAMATER_NAME_INDEX = 1
 	$VALUE_INDEX = 3
 	
-	if($packageParameters -match $MATCH_PATTERN ){
+	if($packageParameters -match $MATCH_PATTERN){
 		$results = $packageParameters | Select-String $MATCH_PATTERN -AllMatches 
 		$results.matches | % { 
 		$arguments.Add(
