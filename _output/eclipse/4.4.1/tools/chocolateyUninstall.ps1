@@ -1,4 +1,5 @@
 ﻿$packageName = 'eclipse'
 
-ChildItem "$env:ChocolateyInstall\lib\${packageName}.*" -Recurse -Filter "${packageName}Install.zip.txt" | 
-ForEach-Object{ $extractionPath = (Get-Content $_.FullName | Select-Object -First 1); Write-Host "Uninstalling by removing directory $extractionPath"; if (($extractionPath -match "${packageName}") -and (Test-Path -Path $extractionPath)){Remove-Item -Recurse -Force $extractionPath}}
+. "$PSScriptRoot\Uninstall-ChocolateyZipPackage030.ps1"
+
+Uninstall-ChocolateyZipPackage030 "$packageName"
