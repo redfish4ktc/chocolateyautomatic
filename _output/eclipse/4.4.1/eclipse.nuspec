@@ -10,7 +10,7 @@
     <projectUrl>http://www.eclipse.org/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/030/chocolateyautomatic/master/icons/eclipse.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Eclipse IDE for Java EE Developers. Windows 32 and 64 bit. Extraction path: "C:\Program Files\Eclipse Foundation".</description>
+    <description>Eclipse IDE for Java EE Developers. Windows 32 and 64 bit. Extraction path: "C:\Program Files\Eclipse Foundation". Issue -packageParameters "/ExtractionPath:C:\path\to\installationdirectory" to overwrite the default installation directory</description>
     <summary>eclipse</summary>
     <releaseNotes>http://www.eclipse.org</releaseNotes>
     <tags>eclipse ide jdk8 jee java</tags>
