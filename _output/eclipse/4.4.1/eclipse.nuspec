@@ -10,7 +10,18 @@
     <projectUrl>http://www.eclipse.org/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/030/chocolateyautomatic/master/icons/eclipse.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Eclipse IDE for Java EE Developers. Windows 32 and 64 bit. Extraction path: "C:\Program Files\Eclipse Foundation". Issue -packageParameters "/ExtractionPath:C:\path\to\installationdirectory" to overwrite the default installation directory</description>
+    <description>Eclipse IDE for Java EE Developers. Windows 32 and 64 bit. Extraction path: `C:\Program Files\Eclipse Foundation`.
+	===================================
+	**Optional installation commands**
+	-----------------------------------
+	*Overwrite default extraction path*
+	Issue `-packageParameters "/ExtractionPath:C:\path\to\installationdirectory"` to overwrite the default installation directory, e.g. `choco install eclipse -packageParameters "/ExtractionPath:C:\temp"` extracts the package in `C:\temp`.
+	===================================
+	**Bugs and Features**
+	-----------------------------------
+	*Create an issue or comment to an existing one*
+	https://github.com/030/chocolateyautomatic/issues
+	</description>
     <summary>eclipse</summary>
     <releaseNotes>http://www.eclipse.org</releaseNotes>
     <tags>eclipse ide jdk8 jee java</tags>
