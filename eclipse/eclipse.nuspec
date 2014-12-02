@@ -20,6 +20,7 @@
   </metadata>
   <files>
 	<file src="C:\Users\r\Desktop\bitbucket-github\chocolateyautomatic\common\Uninstall-ChocolateyZipPackage030.ps1" target="tools\Uninstall-ChocolateyZipPackage030.ps1" />
+	<file src="C:\Users\r\Desktop\bitbucket-github\chocolateyautomatic\common\OverwriteParameters030.ps1" target="tools\OverwriteParameters030.ps1" />	
 	<file src="tools\*" target="tools" />
   </files>
 </package>
