@@ -3,7 +3,7 @@ function OverwriteParameters030 {
 	$packageParameters = $env:chocolateyPackageParameters;
 
 	if($packageParameters) {
-		$MATCH_PATTERN = "/([a-zA-Z]+):([`"'])?(.*)([`"'])?"
+		$MATCH_PATTERN = "/([a-zA-Z]+)=([`"'])?(.*)([`"'])?"
 		$PARAMATER_NAME_INDEX = 1
 		$VALUE_INDEX = 3
 		
@@ -16,9 +16,9 @@ function OverwriteParameters030 {
 			}
 		}     
 		
-		if($arguments.ContainsKey("ExtractionPath")) {
-			$global:extractionPath = $arguments["ExtractionPath"];
-			Write-Host "Value variable extractionPath changed to $global:extractionPath"
+		if($arguments.ContainsKey("InstallLocation")) {
+			$global:installLocation = $arguments["InstallLocation"];
+			Write-Host "Value variable installLocation changed to $global:installLocation"
 		}
 	}	
 }
