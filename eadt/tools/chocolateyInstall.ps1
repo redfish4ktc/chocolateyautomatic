@@ -9,7 +9,7 @@ OverwriteParameters030
 
 Install-ChocolateyZipPackage "$packageName" "$32BitUrl" "$global:installLocation" "$64BitUrl"
 
-$eadtHome = (gci "$global:installLocation\*\").FullName | sort -Descending | Select -first 1
+$eadtHome = (gci "$global:installLocation\adt-bundle-windows-x86_64-*\").FullName | sort -Descending | Select -first 1
 $sdkManagerExecutable = "$eadtHome\SDK Manager.exe"
 $eclipseExecutable = "$eadtHome\eclipse\eclipse.exe"
 
