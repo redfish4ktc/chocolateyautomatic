@@ -42,7 +42,7 @@ param(
   [string] $createServiceCommand,
   [int] $availablePort
 )
-  Write-Debug "Running 'Install-ChocolateyService030' for $packageName with serviceName:`'$serviceName`', createServiceCommand: `'$createServiceCommand`', availablePort: `'$availablePort`' ";
+  Write-debug "Running 'Install-ChocolateyService030' for $packageName with serviceName:`'$serviceName`', createServiceCommand: `'$createServiceCommand`', availablePort: `'$availablePort`' ";
 
   if(!$packageName) {
     Write-ChocolateyFailure "Install-ChocolateyService030" "Missing PackageName input parameter."
@@ -60,7 +60,12 @@ param(
   }  
   
   try {
-    UnInstall-ChocolateyService030 -serviceName "$serviceName"
+    Uninstall-ChocolateyService030 -serviceName "$serviceName"
+  
+	if($availablePort -and (Get-StatePort)) {
+		Write-ChocolateyFailure "Install-ChocolateyService030" "$availablePort is in LISTENING state and not available."
+		return
+	}  
   
     try {
       Write-Host "$packageName service will be installed"
@@ -71,10 +76,7 @@ param(
 	  return
     }
 
-	if($availablePort -and (Get-StatePort)) {
-		Write-ChocolateyFailure "Install-ChocolateyService030" "$availablePort is in LISTENING state and not available."
-		return
-	}
+
 	
     if (Get-ServiceExistence030 -serviceName "$serviceName") {
       Write-Host "$packageName service will be started"
@@ -114,7 +116,7 @@ param(
   Get-WmiObject -Class Win32_Service -Filter "Name='$serviceName'"
 }
 
-function UnInstall-ChocolateyService030 {
+function Uninstall-ChocolateyService030 {
 param(
   [string] $serviceName = ''
 )
