@@ -58,72 +58,66 @@ param(
     Write-ChocolateyFailure "Install-ChocolateyService030" "Missing CreateServiceCommand input parameter."
     return
   }  
-  
+
+  Uninstall-ChocolateyService030 -serviceName "$serviceName"
+
+  if($availablePort -and (Get-StatePort)) {
+    Write-ChocolateyFailure "Install-ChocolateyService030" "$availablePort is in LISTENING state and not available."
+    return
+  }  
+
   try {
-    Uninstall-ChocolateyService030 -serviceName "$serviceName"
-  
-	if($availablePort -and (Get-StatePort)) {
-		Write-ChocolateyFailure "Install-ChocolateyService030" "$availablePort is in LISTENING state and not available."
-		return
-	}  
-  
-    try {
-      Write-Host "$packageName service will be installed"
-	  Write-Host $createServiceCommand
-      iex $createServiceCommand
-    } catch {
-      Write-ChocolateyFailure "Install-ChocolateyService030" "The createServiceCommand is incorrect: '$_'."
-	  return
-    }
-
-
-	
-    if (Get-ServiceExistence030 -serviceName "$serviceName") {
-      Write-Host "$packageName service will be started"
-	  
-	  for ($i=0;$i -lt 12; $i++) {
-	    $serviceStatus = Get-Service -Name $serviceName
-		
-		start-service $serviceName
-        
-		if (($serviceStatus.Status -eq "running") -and (Get-StatePort)) {
-			Write-Host "$packageName service has been started"
-			return
-		} else {
-			Write-Host "$packageName service cannot be started. Attempt $i to start the service."
-		}
-		
-		if ($i -eq 11) {
-		  Write-ChocolateyFailure "Install-ChocolateyService030" "service $serviceName cannot be started."
-		  return
-		}		
-		
-		Start-Sleep -s 10
-      }
-    } else {
-      Write-ChocolateyFailure "Install-ChocolateyService030" "service $serviceName does not exist."
-      return
-    }	
+    Write-Host "$packageName service will be installed"
+    iex $createServiceCommand
   } catch {
-    Write-ChocolateyFailure "Install-ChocolateyService030" "There were errors attempting to create the $packageName service. The error message was '$_'."
+    Write-ChocolateyFailure "Install-ChocolateyService030" "The createServiceCommand is incorrect: '$_'."
+  return
+  }
+
+  if (Get-ServiceExistence030) {
+    Write-Host "$packageName service will be started"
+  
+  for ($i=0;$i -lt 12; $i++) {
+    $serviceStatus = Get-Service -Name $serviceName
+	
+	start-service $serviceName
+      
+	if (($serviceStatus.Status -eq "running") -and (Get-StatePort)) {
+		Write-Host "$packageName service has been started"
+		return
+	} else {
+		Write-Host "$packageName service cannot be started. Attempt $i to start the service."
+	}
+	
+	if ($i -eq 11) {
+	  Write-ChocolateyFailure "Install-ChocolateyService030" "service $serviceName cannot be started."
+	  return
+	}		
+	
+	Start-Sleep -s 10
+    }
+  } else {
+    Write-ChocolateyFailure "Install-ChocolateyService030" "service $serviceName does not exist."
+    return
   }
 }
 
 function Get-ServiceExistence030 {
 param(
-  [string] $serviceName = ''
+  [string] $serviceName = $serviceName
 )
   Get-WmiObject -Class Win32_Service -Filter "Name='$serviceName'"
 }
 
 function Uninstall-ChocolateyService030 {
 param(
-  [string] $serviceName = ''
+  [string] $serviceName = $serviceName
 )
-  if (Get-ServiceExistence030 -serviceName "$serviceName") {
+  $service = Get-ServiceExistence030 -serviceName $serviceName
+
+  if ($service) {
     Write-Host "$serviceName service already exists and will be removed"
-    stop-service $serviceName
-    $service = Get-ServiceExistence030 -serviceName "$serviceName"
+	stop-service $serviceName
     $service.delete()      
   }
 }
