@@ -5,7 +5,7 @@
     <UserAgent />
     <UserNotes />
     <LastFileSize>266229811</LastFileSize>
-    <LastFileDate>2014-12-03T18:24:00.0449132</LastFileDate>
+    <LastFileDate>2015-01-03T14:45:17.634457</LastFileDate>
     <IgnoreFileInformation>false</IgnoreFileInformation>
     <DownloadBeta>Default</DownloadBeta>
     <DownloadDate xsi:nil="true" />
@@ -81,7 +81,7 @@
           <UrlVariable>
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>RegularExpression</VariableType>
-            <Regex>\w+\/\w+\/eclipse-jee-\w+-\w+-win32</Regex>
+            <Regex>(\w+\/\w+\/eclipse-jee-\w+-\w+-win32)</Regex>
             <Url>http://eclipse.org/downloads/</Url>
             <Name>package</Name>
           </UrlVariable>
@@ -101,9 +101,65 @@
           </UrlVariable>
         </value>
       </item>
+      <item>
+        <key>
+          <string>checksumBaseUrl</string>
+        </key>
+        <value>
+          <UrlVariable>
+            <RegexRightToLeft>false</RegexRightToLeft>
+            <VariableType>Textual</VariableType>
+            <Regex />
+            <TextualContent>https://www.eclipse.org/downloads/sums.php?file=/technology/epp/downloads/release/</TextualContent>
+            <Name>checksumBaseUrl</Name>
+          </UrlVariable>
+        </value>
+      </item>
+      <item>
+        <key>
+          <string>checksumUrlPostfix</string>
+        </key>
+        <value>
+          <UrlVariable>
+            <RegexRightToLeft>false</RegexRightToLeft>
+            <VariableType>Textual</VariableType>
+            <Regex />
+            <TextualContent>.zip&amp;type=md5</TextualContent>
+            <Name>checksumUrlPostfix</Name>
+          </UrlVariable>
+        </value>
+      </item>
+      <item>
+        <key>
+          <string>checksum</string>
+        </key>
+        <value>
+          <UrlVariable>
+            <RegexRightToLeft>false</RegexRightToLeft>
+            <VariableType>RegularExpression</VariableType>
+            <Regex>^((\w|\d)+)</Regex>
+            <Url>{checksumBaseUrl}{package}{checksumUrlPostfix}</Url>
+            <Name>checksum</Name>
+          </UrlVariable>
+        </value>
+      </item>
+      <item>
+        <key>
+          <string>checksumx64</string>
+        </key>
+        <value>
+          <UrlVariable>
+            <RegexRightToLeft>false</RegexRightToLeft>
+            <VariableType>RegularExpression</VariableType>
+            <Regex>^((\w|\d)+)</Regex>
+            <Url>{checksumBaseUrl}{package}-x86_64{checksumUrlPostfix}</Url>
+            <Name>checksumx64</Name>
+          </UrlVariable>
+        </value>
+      </item>
     </Variables>
-    <ExecuteCommand>chocopkgup /disablepush /p {appname} /v {version} /u "{preupdate-url}" /u64 "{url64}" /pp "{file}" </ExecuteCommand>
-    <ExecutePreCommand />
+    <ExecuteCommand />
+    <ExecutePreCommand>chocopkgup /disablepush /p {appname} /v {version} /u "{preupdate-url}" /u64 "{url64}" /pp "{file}" /c "{checksum}" /c64 "{checksumx64}"</ExecutePreCommand>
     <ExecuteCommandType>Batch</ExecuteCommandType>
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
     <Category />
@@ -112,7 +168,7 @@
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2014-12-03T18:24:00.0449132</LastUpdated>
+    <LastUpdated>2015-01-03T14:45:17.634457</LastUpdated>
     <TargetPath>C:\ProgramData\Chocolatey\_work\</TargetPath>
     <FixedDownloadUrl>{url}</FixedDownloadUrl>
     <Name>eclipse</Name>
