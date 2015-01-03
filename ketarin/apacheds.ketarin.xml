@@ -5,7 +5,7 @@
     <UserAgent />
     <UserNotes />
     <LastFileSize>9948452</LastFileSize>
-    <LastFileDate>2014-11-21T23:14:44+01:00</LastFileDate>
+    <LastFileDate>2015-01-02T20:19:33.287152</LastFileDate>
     <IgnoreFileInformation>false</IgnoreFileInformation>
     <DownloadBeta>Default</DownloadBeta>
     <DownloadDate xsi:nil="true" />
@@ -111,15 +111,15 @@
           <UrlVariable>
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>RegularExpression</VariableType>
-            <Regex>(.*)</Regex>
+            <Regex>^((\w|\d)+)</Regex>
             <Url>http://archive.apache.org/dist/directory/apacheds/dist/{downloadVersion}/apacheds-{downloadVersion}.zip.md5</Url>
             <Name>checksum</Name>
           </UrlVariable>
         </value>
       </item>
     </Variables>
-    <ExecuteCommand>chocopkgup /disablepush /p {appname} /v {version} /u "{preupdate-url}" /u64 "{url64}" /pp "{file}" /c={checksum}</ExecuteCommand>
-    <ExecutePreCommand />
+    <ExecuteCommand />
+    <ExecutePreCommand>chocopkgup /disablepush /p {appname} /v {version} /u "{preupdate-url}" /u64 "{url64}" /pp "{file}" /c {checksum}</ExecutePreCommand>
     <ExecuteCommandType>Batch</ExecuteCommandType>
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
     <Category />
@@ -128,7 +128,7 @@
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2015-01-02T20:19:33.287152+01:00</LastUpdated>
+    <LastUpdated>2015-01-02T20:19:33.287152</LastUpdated>
     <TargetPath>C:\ProgramData\Chocolatey\_work\</TargetPath>
     <FixedDownloadUrl>{url}</FixedDownloadUrl>
     <Name>apacheds</Name>
