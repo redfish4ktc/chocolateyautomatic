@@ -4,6 +4,8 @@ $32BitUrl = 'http://eclipse.mirror.triple-it.nl/technology/epp/downloads/release
 $64BitUrl = 'http://eclipse.mirror.triple-it.nl/technology/epp/downloads/release/luna/SR1/eclipse-jee-luna-SR1-win32-x86_64.zip'
 $global:installLocation = "C:\Program Files\Eclipse Foundation\$packageVersion"
 $eclipseExecutable = "$global:installLocation\eclipse\eclipse.exe"
+
+if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent }
 . "$PSScriptRoot\OverwriteParameters030.ps1"
 
 OverwriteParameters030
