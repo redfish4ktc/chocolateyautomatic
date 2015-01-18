@@ -7,7 +7,6 @@ $checksumType = 'md5'
 $checksum64 = '{{Checksumx64}}'
 $checksumType64 = 'md5'
 $availablePort = '8080'
-$catalinaHome = "$global:installLocation\apache-tomcat-{{PackageVersion}}"
 $createServiceCommand = "${catalinaHome}\bin\service.bat install $packageName"
 $serviceName = '{{PackageName}}'
 
@@ -18,6 +17,8 @@ if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Par
 OverwriteParameters030
 
 Install-ChocolateyZipPackage "$packageName" "$32BitUrl" "$global:installLocation" "$64BitUrl" -checksum "$checksum" -checksumType "$checksumType" -checksum64 "$checksum64" -checksumType64 "$checksumType64"
+
+$catalinaHome = "$global:installLocation\apache-tomcat-{{PackageVersion}}"
 
 Install-ChocolateyEnvironmentVariable 'CATALINA_HOME' "$catalinaHome"
 
