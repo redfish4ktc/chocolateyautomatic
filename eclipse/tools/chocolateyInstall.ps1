@@ -3,7 +3,6 @@ $packageVersion = '{{PackageVersion}}'
 $32BitUrl = '{{DownloadUrl}}'
 $64BitUrl = '{{DownloadUrlx64}}'
 $global:installLocation = "C:\Program Files\Eclipse Foundation\$packageVersion"
-$eclipseExecutable = "$global:installLocation\eclipse\eclipse.exe"
 $checksum = '{{Checksum}}'
 $checksumType = 'md5'
 $checksum64 = '{{Checksumx64}}'
@@ -16,6 +15,7 @@ OverwriteParameters030
 
 Install-ChocolateyZipPackage "$packageName" "$32BitUrl" "$global:installLocation" "$64BitUrl" -checksum "$checksum" -checksumType "$checksumType" -checksum64 "$checksum64" -checksumType64 "$checksumType64"
 
-Install-ChocolateyDesktopLink "$eclipseExecutable"
+$eclipseExecutable = "$global:installLocation\eclipse\eclipse.exe"
 
+Install-ChocolateyDesktopLink "$eclipseExecutable"
 Install-ChocolateyPinnedTaskBarItem "$eclipseExecutable"
