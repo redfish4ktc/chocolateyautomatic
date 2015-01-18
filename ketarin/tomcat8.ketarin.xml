@@ -4,8 +4,8 @@
     <WebsiteUrl />
     <UserAgent />
     <UserNotes />
-    <LastFileSize>10448918</LastFileSize>
-    <LastFileDate>2014-11-02T20:54:48+01:00</LastFileDate>
+    <LastFileSize>10487719</LastFileSize>
+    <LastFileDate>2015-01-09T17:33:43+01:00</LastFileDate>
     <IgnoreFileInformation>false</IgnoreFileInformation>
     <DownloadBeta>Default</DownloadBeta>
     <DownloadDate xsi:nil="true" />
@@ -161,16 +161,16 @@
       </item>
     </Variables>
     <ExecuteCommand />
-    <ExecutePreCommand>chocopkgup /disablepush /p {appname} /v {version} /u "{preupdate-url}" /u64 "{url64}" /pp "{file}" /c "{checksum}" /c64 "{checksumx64}"</ExecutePreCommand>
+    <ExecutePreCommand />
     <ExecuteCommandType>Batch</ExecuteCommandType>
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
     <Category />
     <SourceType>FixedUrl</SourceType>
-    <PreviousLocation>C:\ProgramData\Chocolatey\_work\apache-tomcat-8.0.15-windows-x86.zip</PreviousLocation>
+    <PreviousLocation>C:\ProgramData\Chocolatey\_work\apache-tomcat-8.0.17-windows-x86.zip</PreviousLocation>
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2015-01-03T19:03:03.2285057+01:00</LastUpdated>
+    <LastUpdated>2015-01-17T19:08:19.1343209+01:00</LastUpdated>
     <TargetPath>C:\ProgramData\Chocolatey\_work\</TargetPath>
     <FixedDownloadUrl>{url}</FixedDownloadUrl>
     <Name>tomcat8</Name>
