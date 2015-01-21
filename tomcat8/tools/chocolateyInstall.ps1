@@ -10,10 +10,10 @@ $availablePort = '8080'
 $serviceName = '{{PackageName}}'
 
 if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent }
-. "$PSScriptRoot\OverwriteParameters030.ps1"
-. "$PSScriptRoot\Install-ChocolateyService030.ps1"
+. "$PSScriptRoot\OverwriteParameters.ps1"
+. "$PSScriptRoot\Install-Service.ps1"
 
-OverwriteParameters030
+OverwriteParameters
 
 Install-ChocolateyZipPackage "$packageName" "$32BitUrl" "$global:installLocation" "$64BitUrl" -checksum "$checksum" -checksumType "$checksumType" -checksum64 "$checksum64" -checksumType64 "$checksumType64"
 
@@ -22,4 +22,4 @@ $createServiceCommand = "${catalinaHome}\bin\service.bat install $packageName"
 
 Install-ChocolateyEnvironmentVariable 'CATALINA_HOME' "$catalinaHome"
 
-Install-ChocolateyService030 $packageName $serviceName $createServiceCommand $availablePort
+Install-Service $packageName $serviceName $createServiceCommand $availablePort

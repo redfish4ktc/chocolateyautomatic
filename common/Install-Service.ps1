@@ -1,4 +1,4 @@
-function Install-ChocolateyService030 {
+function Install-Service {
     <#
     .SYNOPSIS
     Installs a service
@@ -19,11 +19,11 @@ function Install-ChocolateyService030 {
         The port which needs to be available in order to start the service.
 
         .EXAMPLE
-        Install-ChocolateyService030 'PACKAGE_NAME' 'SERVICE_NAME' 'INSTALL_COMMAND' 'PORT'
-        Install-ChocolateyService030 "dcm4chee" "DCM4CHEE" "nssm install DCM4CHEE `"java`" -jar `"%DCM4CHEE_HOME%/bin/run.jar"`" "8090"
-        Install-ChocolateyService030 "postgresqlzip" "PostgreSQL" "pg_ctl register -N `"PostgreSQL`" -U `"LocalSystem`" -w" "5432"
-        Install-ChocolateyService030 "apacheds" "ApacheDS" "nssm install ApacheDS `"java`" -jar `"%APACHEDS_HOME%/lib/apacheds-service-${version}.jar`" `"%APACHEDS_HOME%/instances/default`"" "10389"
-        Install-ChocolateyService030 "test" "test" "nssm install test `"$testDirectory\testService.bat`""
+        Install-Service 'PACKAGE_NAME' 'SERVICE_NAME' 'INSTALL_COMMAND' 'PORT'
+        Install-Service "dcm4chee" "DCM4CHEE" "nssm install DCM4CHEE `"java`" -jar `"%DCM4CHEE_HOME%/bin/run.jar"`" "8090"
+        Install-Service "postgresqlzip" "PostgreSQL" "pg_ctl register -N `"PostgreSQL`" -U `"LocalSystem`" -w" "5432"
+        Install-Service "apacheds" "ApacheDS" "nssm install ApacheDS `"java`" -jar `"%APACHEDS_HOME%/lib/apacheds-service-${version}.jar`" `"%APACHEDS_HOME%/instances/default`"" "10389"
+        Install-Service "test" "test" "nssm install test `"$testDirectory\testService.bat`""
 
         .OUTPUTS
         None
@@ -33,7 +33,7 @@ function Install-ChocolateyService030 {
         This method has error handling built into it.
 
         .LINK
-        UnInstall-ChocolateyService030
+        UnInstall-Service
         Get-ServiceExistence
 #>
         param(
@@ -42,27 +42,27 @@ function Install-ChocolateyService030 {
             [string] $createServiceCommand,
             [int] $availablePort
         )
-        Write-debug "Running 'Install-ChocolateyService030' for $packageName with serviceName:`'$serviceName`', createServiceCommand: `'$createServiceCommand`', availablePort: `'$availablePort`' ";
+        Write-debug "Running 'Install-Service' for $packageName with serviceName:`'$serviceName`', createServiceCommand: `'$createServiceCommand`', availablePort: `'$availablePort`' ";
 
     if (!$packageName) {
-        Write-ChocolateyFailure "Install-ChocolateyService030" "Missing PackageName input parameter."
+        Write-ChocolateyFailure "Install-Service" "Missing PackageName input parameter."
         return
         }
 
     if (!$serviceName) {
-        Write-ChocolateyFailure "Install-ChocolateyService030" "Missing ServiceName input parameter."
+        Write-ChocolateyFailure "Install-Service" "Missing ServiceName input parameter."
         return
         }
 
     if (!$createServiceCommand) {
-        Write-ChocolateyFailure "Install-ChocolateyService030" "Missing CreateServiceCommand input parameter."
+        Write-ChocolateyFailure "Install-Service" "Missing CreateServiceCommand input parameter."
         return
         }
 
-        Uninstall-ChocolateyService030 -serviceName "$serviceName"
+        UnInstall-Service -serviceName "$serviceName"
 
     if ($availablePort -and (Get-StatePort)) {
-        Write-ChocolateyFailure "Install-ChocolateyService030" "$availablePort is in LISTENING state and not available."
+        Write-ChocolateyFailure "Install-Service" "$availablePort is in LISTENING state and not available."
         return
         }
 
@@ -70,11 +70,11 @@ function Install-ChocolateyService030 {
         Write-Host "$packageName service will be installed"
         iex $createServiceCommand
     } catch {
-    Write-ChocolateyFailure "Install-ChocolateyService030" "The createServiceCommand is incorrect: '$_'."
+    Write-ChocolateyFailure "Install-Service" "The createServiceCommand is incorrect: '$_'."
     return
 }
 
-if (Get-ServiceExistence030) {
+if (Get-ServiceExistence) {
         Write-Host "$packageName service will be started"
 
         for ($i=0;$i -lt 12; $i++) {
@@ -90,30 +90,30 @@ if (Get-ServiceExistence030) {
             }
 
             if ($i -eq 11) {
-                Write-ChocolateyFailure "Install-ChocolateyService030" "service $serviceName cannot be started."
+                Write-ChocolateyFailure "Install-Service" "service $serviceName cannot be started."
                 return
                 }
 
                 Start-Sleep -s 10
             }
     } else {
-        Write-ChocolateyFailure "Install-ChocolateyService030" "service $serviceName does not exist."
+        Write-ChocolateyFailure "Install-Service" "service $serviceName does not exist."
         return
         }
     }
 
-function Get-ServiceExistence030 {
+function Get-ServiceExistence {
     param(
         [string] $serviceName = $serviceName
     )
     Get-WmiObject -Class Win32_Service -Filter "Name='$serviceName'"
 }
 
-function Uninstall-ChocolateyService030 {
+function Uninstall-Service {
     param(
         [string] $serviceName = $serviceName
     )
-    $service = Get-ServiceExistence030 -serviceName $serviceName
+    $service = Get-ServiceExistence -serviceName $serviceName
 
     if ($service) {
         Write-Host "$serviceName service already exists and will be removed"

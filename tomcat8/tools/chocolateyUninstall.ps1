@@ -1,9 +1,9 @@
 ﻿$packageName = '{{PackageName}}'
 
 if(!$PSScriptRoot){ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent }
-. "$PSScriptRoot\Install-ChocolateyService030.ps1"
-. "$PSScriptRoot\Uninstall-ChocolateyZipPackage030.ps1"
+. "$PSScriptRoot\Install-Service.ps1"
+. "$PSScriptRoot\Uninstall-ZipPackage.ps1"
 
-Uninstall-ChocolateyService030 "$packageName"
+Uninstall-Service "$packageName"
 
-Uninstall-ChocolateyZipPackage030 "$packageName"
+Uninstall-ZipPackage "$packageName"

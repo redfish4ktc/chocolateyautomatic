@@ -11,7 +11,7 @@ $unlistenPort = -1
 $testServiceBatPath = "$here\helpers\testService.bat"
 $createServiceCommandComplete = "$createServiceCommand `"$testServiceBatPath`""
 
-Describe "Install-ChocolateyService" {
+Describe "Install-ChocolateyService030" {
         Context "When createServiceCommand parameter is passed to this function and is invalid" {
                 Mock Write-ChocolateyFailure
         

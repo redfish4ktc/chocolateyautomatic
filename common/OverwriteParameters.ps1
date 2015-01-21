@@ -1,4 +1,4 @@
-function OverwriteParameters030 {
+function OverwriteParameters {
 	$arguments = @{};
 	$packageParameters = $env:chocolateyPackageParameters;
 

@@ -1,9 +1,9 @@
-function Uninstall-ChocolateyZipPackage030 {
+function Uninstall-ZipPackage {
 param(
   [string] $packageName
 )
 	if(!$packageName) {
-		Write-ChocolateyFailure "Uninstall-ChocolateyZipPackage030" "Missing PackageName input parameter."
+		Write-ChocolateyFailure "Uninstall-ZipPackage" "Missing PackageName input parameter."
 		return
 	}
 	

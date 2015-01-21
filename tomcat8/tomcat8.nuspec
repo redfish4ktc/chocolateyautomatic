@@ -28,9 +28,9 @@ Create an issue or comment to an existing one - https://github.com/030/chocolate
     </dependencies>
   </metadata>
   <files> 
-	<file src="..\..\..\common\Install-ChocolateyService030.ps1" target="tools\Install-ChocolateyService030.ps1" />  
-	<file src="..\..\..\common\Uninstall-ChocolateyZipPackage030.ps1" target="tools\Uninstall-ChocolateyZipPackage030.ps1" />
-	<file src="..\..\..\common\OverwriteParameters030.ps1" target="tools\OverwriteParameters030.ps1" />	
+	<file src="..\..\..\common\Install-Service.ps1" target="tools\Install-Service.ps1" />  
+	<file src="..\..\..\common\Uninstall-ZipPackage.ps1" target="tools\Uninstall-ZipPackage.ps1" />
+	<file src="..\..\..\common\OverwriteParameters.ps1" target="tools\OverwriteParameters.ps1" />	
 	<file src="tools\*" target="tools" />
   </files>  
 </package>
