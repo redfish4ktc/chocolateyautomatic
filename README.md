@@ -2,4 +2,4 @@ chocolateyautomatic
 ===================
  * apacheds
  * eclipse
- * tomcat8
+ * tomcat
