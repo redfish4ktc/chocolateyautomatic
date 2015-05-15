@@ -123,5 +123,5 @@ function Uninstall-Service {
 }
 
 function Get-StatePort {
-    return Get-NetTCPConnection -State Listen | Where-Object {$_.LocalAddress -match "::|0.0.0.0" -and $_.LocalPort -eq "$availablePort"}
+    return Get-NetTCPConnection -State Listen | Where-Object {$_.LocalAddress -match "::|(127|0).0.0.(0|1)" -and $_.LocalPort -eq "$availablePort"}
 }
