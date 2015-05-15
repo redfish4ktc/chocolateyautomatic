@@ -6,8 +6,8 @@
     <title>Wildfly</title>
     <authors>Red Hat</authors>
     <owners>Utrecht</owners>
-    <licenseUrl>LGPL</licenseUrl>
-    <projectUrl>http://http://wildfly.org/</projectUrl>
+    <licenseUrl>https://www.gnu.org/licenses/lgpl-2.1.html</licenseUrl>
+    <projectUrl>http://wildfly.org/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/030/chocolateyautomatic/master/icons/wildfly.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Wildfly is an Application Server and successor of JBoss. Wildfly requires a JDK in order to run.

@@ -12,6 +12,6 @@ OverwriteParameters
 
 Install-ChocolateyZipPackage "$packageName" "$Url" "$global:installLocation"
 
-$createServiceCommand = "$global:installLocation}\${packageName}-{{PackageVersion}}.Final\bin\service\service.bat install"
+$createServiceCommand = "$global:installLocation\${packageName}-{{PackageVersion}}.Final\bin\service\service.bat install"
 
 Install-Service $packageName $serviceName $createServiceCommand $availablePort
