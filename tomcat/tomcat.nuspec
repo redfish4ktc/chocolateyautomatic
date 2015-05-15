@@ -10,7 +10,7 @@
     <projectUrl>http://tomcat.apache.org/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/030/chocolateyautomatic/master/icons/tomcat.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Tomcat is a Application Server. It is possible to run Web application ARchive (WAR) files using Tomcat. Apache Tomcat requires a JDK in order to run.
+    <description>Tomcat is an Application Server. It is possible to run Web application ARchive (WAR) files using Tomcat. Apache Tomcat requires a JDK in order to run.
 
 ### Optional installation commands:
 
