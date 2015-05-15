@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>{{PackageName}}</id>
+    <version>{{PackageVersion}}</version>
+    <title>Wildfly</title>
+    <authors>Red Hat</authors>
+    <owners>Utrecht</owners>
+    <licenseUrl>LGPL</licenseUrl>
+    <projectUrl>http://http://wildfly.org/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/030/chocolateyautomatic/master/icons/wildfly.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Wildfly is an Application Server and successor of JBoss. Wildfly requires a JDK in order to run.
+
+### Optional installation commands:
+
+Issue `-packageparameters '"/InstallLocation=C:\Path\to\installationdirectory"'` to overwrite the default installation directory, e.g. `choco install {{PackageName}} -packageparameters '"/InstallLocation=C:\temp"'` extracts the package in `C:\temp`.
+	
+### Bugs and Features:
+
+Create an issue or comment to an existing one - https://github.com/030/chocolateyautomatic/issues
+	</description>
+    <summary>Application Server. Windows 32 and 64 bit.</summary>
+    <releaseNotes>http://wildfly.org/news/tags/release/</releaseNotes>
+    <tags>application server wildfly jboss jdk8</tags>
+    <dependencies>
+	  <dependency id="jdk8" />
+    </dependencies>
+  </metadata>
+  <files> 
+	<file src="..\..\..\common\Install-Service.ps1" target="tools\Install-Service.ps1" />  
+	<file src="..\..\..\common\Uninstall-ZipPackage.ps1" target="tools\Uninstall-ZipPackage.ps1" />
+	<file src="..\..\..\common\OverwriteParameters.ps1" target="tools\OverwriteParameters.ps1" />	
+	<file src="tools\*" target="tools" />
+  </files>  
+</package>
