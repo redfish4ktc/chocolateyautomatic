@@ -4,8 +4,8 @@
     <WebsiteUrl />
     <UserAgent />
     <UserNotes />
-    <LastFileSize>10487719</LastFileSize>
-    <LastFileDate>2015-01-17T19:08:19.1343209</LastFileDate>
+    <LastFileSize>132178731</LastFileSize>
+    <LastFileDate>2014-11-21T06:13:53+01:00</LastFileDate>
     <IgnoreFileInformation>false</IgnoreFileInformation>
     <DownloadBeta>Default</DownloadBeta>
     <DownloadDate xsi:nil="true" />
@@ -40,8 +40,8 @@
           <UrlVariable>
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>Textual</VariableType>
-            <Regex>(\d\.\d\.\d)\.Final</Regex>
-            <Url>http://wildfly.org/downloads/</Url>
+            <Regex />
+            <Url />
             <TextualContent>http://download.jboss.org/wildfly/{version}.Final/wildfly-{version}.Final.zip</TextualContent>
             <Name>url</Name>
           </UrlVariable>
@@ -54,10 +54,11 @@
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
     <Category />
     <SourceType>FixedUrl</SourceType>
+    <PreviousLocation>C:\ProgramData\Chocolatey\_work\wildfly-8.2.0.Final.zip</PreviousLocation>
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2015-01-17T19:08:19.1343209</LastUpdated>
+    <LastUpdated>2015-05-16T03:25:40.267272+02:00</LastUpdated>
     <TargetPath>C:\ProgramData\Chocolatey\_work\</TargetPath>
     <FixedDownloadUrl>{url}</FixedDownloadUrl>
     <Name>wildfly</Name>
