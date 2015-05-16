@@ -15,12 +15,16 @@ function OverwriteParameters {
 				$_.Groups[$PARAMATER_NAME_INDEX].Value.Trim(),
 				$_.Groups[$VALUE_INDEX].Value.Trim()) 
 			}
-		}     
+		} else {
+			Write-Host "Default packageParameters will be used"
+		}
 		
 		if($arguments.ContainsKey("InstallLocation")) {
 			$global:installLocation = $arguments["InstallLocation"];
 			
 			Write-Host "Value variable installLocation changed to $global:installLocation"
+		} else {
+			Write-Host "Default InstallLocation will be used"
 		}
 	}	
 }
