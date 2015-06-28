@@ -1,11 +1,11 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
 <Jobs>
-  <ApplicationJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Guid="6f460a39-5d39-4072-885f-95783a8db892">
+  <ApplicationJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Guid="a08326ad-dad6-4bd9-955a-00bd4f958160">
     <WebsiteUrl />
     <UserAgent />
     <UserNotes />
-    <LastFileSize>282386003</LastFileSize>
-    <LastFileDate>2015-06-22T12:00:00+02:00</LastFileDate>
+    <LastFileSize>10287839</LastFileSize>
+    <LastFileDate>2015-04-29T14:13:54+02:00</LastFileDate>
     <IgnoreFileInformation>false</IgnoreFileInformation>
     <DownloadBeta>Default</DownloadBeta>
     <DownloadDate xsi:nil="true" />
@@ -19,43 +19,16 @@
     <Variables>
       <item>
         <key>
-          <string>url64</string>
-        </key>
-        <value>
-          <UrlVariable>
-            <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>Textual</VariableType>
-            <Regex />
-            <TextualContent>{baseUrl}/{package}-x86_64{extension}</TextualContent>
-            <Name>url64</Name>
-          </UrlVariable>
-        </value>
-      </item>
-      <item>
-        <key>
           <string>version</string>
         </key>
         <value>
           <UrlVariable>
             <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>RegularExpression</VariableType>
-            <Regex>&lt;span id="descriptionText"&gt;Eclipse.*\((\d\.(\d\.)?\d)\)\sRelease&lt;/span&gt;</Regex>
-            <Url>https://www.eclipse.org/downloads/</Url>
-            <Name>version</Name>
-          </UrlVariable>
-        </value>
-      </item>
-      <item>
-        <key>
-          <string>extension</string>
-        </key>
-        <value>
-          <UrlVariable>
-            <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>Textual</VariableType>
             <Regex />
-            <TextualContent>.zip</TextualContent>
-            <Name>extension</Name>
+            <Url>http://directory.apache.org/</Url>
+            <TextualContent>{majorVersion}.0.{updateVersion}</TextualContent>
+            <Name>version</Name>
           </UrlVariable>
         </value>
       </item>
@@ -68,22 +41,8 @@
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>Textual</VariableType>
             <Regex />
-            <TextualContent>http://eclipse.mirror.triple-it.nl/technology/epp/downloads/release</TextualContent>
+            <TextualContent>http://apache.hippo.nl/tomcat/tomcat</TextualContent>
             <Name>baseUrl</Name>
-          </UrlVariable>
-        </value>
-      </item>
-      <item>
-        <key>
-          <string>package</string>
-        </key>
-        <value>
-          <UrlVariable>
-            <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>RegularExpression</VariableType>
-            <Regex>(\w+\/\w+\/eclipse-jee-\w+-\w+-win32)</Regex>
-            <Url>http://eclipse.org/downloads/</Url>
-            <Name>package</Name>
           </UrlVariable>
         </value>
       </item>
@@ -96,36 +55,51 @@
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>Textual</VariableType>
             <Regex />
-            <TextualContent>{baseUrl}/{package}{extension}</TextualContent>
+            <Url>http://directory.apache.org/apacheds/download/download-archive.html</Url>
+            <TextualContent>{baseUrl}-{majorVersion}/v{version}/bin/apache-tomcat-{version}-windows-x86.zip</TextualContent>
             <Name>url</Name>
           </UrlVariable>
         </value>
       </item>
       <item>
         <key>
-          <string>checksumBaseUrl</string>
+          <string>majorVersion</string>
         </key>
         <value>
           <UrlVariable>
             <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>Textual</VariableType>
-            <Regex />
-            <TextualContent>https://www.eclipse.org/downloads/sums.php?file=/technology/epp/downloads/release/</TextualContent>
-            <Name>checksumBaseUrl</Name>
+            <VariableType>RegularExpression</VariableType>
+            <Regex>Apache Tomcat - Apache Tomcat (\d) Downloads</Regex>
+            <Url>http://tomcat.apache.org/download-80.cgi</Url>
+            <Name>majorVersion</Name>
           </UrlVariable>
         </value>
       </item>
       <item>
         <key>
-          <string>checksumUrlPostfix</string>
+          <string>updateVersion</string>
         </key>
         <value>
           <UrlVariable>
             <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>Textual</VariableType>
-            <Regex />
-            <TextualContent>.zip&amp;type=md5</TextualContent>
-            <Name>checksumUrlPostfix</Name>
+            <VariableType>RegularExpression</VariableType>
+            <Regex>id="{majorVersion}.0.(\d{2})"&gt;\d.{2}.\d{2}</Regex>
+            <Url>http://tomcat.apache.org/download-80.cgi</Url>
+            <Name>updateVersion</Name>
+          </UrlVariable>
+        </value>
+      </item>
+      <item>
+        <key>
+          <string>downloadVersion</string>
+        </key>
+        <value>
+          <UrlVariable>
+            <RegexRightToLeft>false</RegexRightToLeft>
+            <VariableType>RegularExpression</VariableType>
+            <Regex>ApacheDS\s((\d\.){2}\d-M\d+)</Regex>
+            <Url>http://directory.apache.org/</Url>
+            <Name>downloadVersion</Name>
           </UrlVariable>
         </value>
       </item>
@@ -138,8 +112,36 @@
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>RegularExpression</VariableType>
             <Regex>^((\w|\d)+)</Regex>
-            <Url>{checksumBaseUrl}{package}{checksumUrlPostfix}</Url>
+            <Url>{checksumBaseUrl}{majorVersion}/v{version}/bin/apache-tomcat-{version}-windows-x86.zip.md5</Url>
             <Name>checksum</Name>
+          </UrlVariable>
+        </value>
+      </item>
+      <item>
+        <key>
+          <string>url64</string>
+        </key>
+        <value>
+          <UrlVariable>
+            <RegexRightToLeft>false</RegexRightToLeft>
+            <VariableType>Textual</VariableType>
+            <Regex />
+            <TextualContent>{baseUrl}-{majorVersion}/v{version}/bin/apache-tomcat-{version}-windows-x64.zip</TextualContent>
+            <Name>url64</Name>
+          </UrlVariable>
+        </value>
+      </item>
+      <item>
+        <key>
+          <string>checksumBaseUrl</string>
+        </key>
+        <value>
+          <UrlVariable>
+            <RegexRightToLeft>false</RegexRightToLeft>
+            <VariableType>Textual</VariableType>
+            <Regex />
+            <TextualContent>https://www.apache.org/dist/tomcat/tomcat-</TextualContent>
+            <Name>checksumBaseUrl</Name>
           </UrlVariable>
         </value>
       </item>
@@ -152,7 +154,7 @@
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>RegularExpression</VariableType>
             <Regex>^((\w|\d)+)</Regex>
-            <Url>{checksumBaseUrl}{package}-x86_64{checksumUrlPostfix}</Url>
+            <Url>{checksumBaseUrl}{majorVersion}/v{version}/bin/apache-tomcat-{version}-windows-x64.zip.md5</Url>
             <Name>checksumx64</Name>
           </UrlVariable>
         </value>
@@ -164,13 +166,13 @@
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
     <Category />
     <SourceType>FixedUrl</SourceType>
-    <PreviousLocation>C:\ProgramData\Chocolatey\_work\eclipse-jee-mars-R-win32.zip</PreviousLocation>
+    <PreviousLocation>C:\ProgramData\Chocolatey\_work\apache-tomcat-8.0.22-windows-x86.zip</PreviousLocation>
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2015-06-28T15:12:23.8960082+02:00</LastUpdated>
+    <LastUpdated>2015-05-16T11:23:48.9678096+02:00</LastUpdated>
     <TargetPath>C:\ProgramData\Chocolatey\_work\</TargetPath>
     <FixedDownloadUrl>{url}</FixedDownloadUrl>
-    <Name>eclipse</Name>
+    <Name>tomcat</Name>
   </ApplicationJob>
 </Jobs>
