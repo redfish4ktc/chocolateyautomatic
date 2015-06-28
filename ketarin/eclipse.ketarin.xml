@@ -4,8 +4,8 @@
     <WebsiteUrl />
     <UserAgent />
     <UserNotes />
-    <LastFileSize>282386003</LastFileSize>
-    <LastFileDate>2015-06-22T12:00:00+02:00</LastFileDate>
+    <LastFileSize>266230074</LastFileSize>
+    <LastFileDate>2015-01-09T12:00:00+01:00</LastFileDate>
     <IgnoreFileInformation>false</IgnoreFileInformation>
     <DownloadBeta>Default</DownloadBeta>
     <DownloadDate xsi:nil="true" />
@@ -39,7 +39,7 @@
           <UrlVariable>
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>RegularExpression</VariableType>
-            <Regex>&lt;span id="descriptionText"&gt;Eclipse.*\((\d\.(\d\.)?\d)\)\sRelease&lt;/span&gt;</Regex>
+            <Regex>&lt;span id="descriptionText"&gt;Eclipse.*\(((\d\.){2}\d)\)\sRelease&lt;/span&gt;</Regex>
             <Url>https://www.eclipse.org/downloads/</Url>
             <Name>version</Name>
           </UrlVariable>
@@ -164,11 +164,11 @@
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
     <Category />
     <SourceType>FixedUrl</SourceType>
-    <PreviousLocation>C:\ProgramData\Chocolatey\_work\eclipse-jee-mars-R-win32.zip</PreviousLocation>
+    <PreviousLocation>C:\ProgramData\Chocolatey\_work\eclipse-jee-luna-SR1a-win32.zip</PreviousLocation>
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2015-06-28T15:12:23.8960082+02:00</LastUpdated>
+    <LastUpdated>2015-01-17T19:16:49.4311794+01:00</LastUpdated>
     <TargetPath>C:\ProgramData\Chocolatey\_work\</TargetPath>
     <FixedDownloadUrl>{url}</FixedDownloadUrl>
     <Name>eclipse</Name>
