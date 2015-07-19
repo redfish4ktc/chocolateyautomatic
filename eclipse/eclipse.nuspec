@@ -33,7 +33,8 @@ Create an issue or comment to an existing one - https://github.com/030/chocolate
   </metadata>
   <files>
 	<file src="..\..\..\common\Uninstall-ZipPackage.ps1" target="tools\Uninstall-ZipPackage.ps1" />
-	<file src="..\..\..\common\OverwriteParameters.ps1" target="tools\OverwriteParameters.ps1" />	
+	<file src="..\..\..\common\OverwriteParameters.ps1" target="tools\OverwriteParameters.ps1" />
+	<file src="..\..\..\common\Uninstall-DesktopLinkAndPinnedTaskBarItem.ps1" target="tools\Uninstall-DesktopLinkAndPinnedTaskBarItem.ps1" />	
 	<file src="tools\*" target="tools" />
   </files>
 </package>
