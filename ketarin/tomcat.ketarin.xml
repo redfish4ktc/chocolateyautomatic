@@ -4,8 +4,8 @@
     <WebsiteUrl />
     <UserAgent />
     <UserNotes />
-    <LastFileSize>10287839</LastFileSize>
-    <LastFileDate>2015-04-29T14:13:54+02:00</LastFileDate>
+    <LastFileSize>10346762</LastFileSize>
+    <LastFileDate>2015-08-26T17:20:15.5563659</LastFileDate>
     <IgnoreFileInformation>false</IgnoreFileInformation>
     <DownloadBeta>Default</DownloadBeta>
     <DownloadDate xsi:nil="true" />
@@ -41,7 +41,7 @@
             <RegexRightToLeft>false</RegexRightToLeft>
             <VariableType>Textual</VariableType>
             <Regex />
-            <TextualContent>http://apache.hippo.nl/tomcat/tomcat</TextualContent>
+            <TextualContent>http://mirror.nl.webzilla.com/apache/tomcat/tomcat</TextualContent>
             <Name>baseUrl</Name>
           </UrlVariable>
         </value>
@@ -86,20 +86,6 @@
             <Regex>id="{majorVersion}.0.(\d{2})"&gt;\d.{2}.\d{2}</Regex>
             <Url>http://tomcat.apache.org/download-80.cgi</Url>
             <Name>updateVersion</Name>
-          </UrlVariable>
-        </value>
-      </item>
-      <item>
-        <key>
-          <string>downloadVersion</string>
-        </key>
-        <value>
-          <UrlVariable>
-            <RegexRightToLeft>false</RegexRightToLeft>
-            <VariableType>RegularExpression</VariableType>
-            <Regex>ApacheDS\s((\d\.){2}\d-M\d+)</Regex>
-            <Url>http://directory.apache.org/</Url>
-            <Name>downloadVersion</Name>
           </UrlVariable>
         </value>
       </item>
@@ -166,11 +152,11 @@
     <ExecutePreCommandType>Batch</ExecutePreCommandType>
     <Category />
     <SourceType>FixedUrl</SourceType>
-    <PreviousLocation>C:\ProgramData\Chocolatey\_work\apache-tomcat-8.0.22-windows-x86.zip</PreviousLocation>
+    <PreviousLocation>C:\ProgramData\Chocolatey\_work\apache-tomcat-8.0.26-windows-x86.zip</PreviousLocation>
     <DeletePreviousFile>true</DeletePreviousFile>
     <Enabled>true</Enabled>
     <FileHippoId />
-    <LastUpdated>2015-05-16T11:23:48.9678096+02:00</LastUpdated>
+    <LastUpdated>2015-08-26T17:20:15.5563659</LastUpdated>
     <TargetPath>C:\ProgramData\Chocolatey\_work\</TargetPath>
     <FixedDownloadUrl>{url}</FixedDownloadUrl>
     <Name>tomcat</Name>
